@@ -4305,3 +4305,19 @@ Native.implement([Hash, Array, String, Number], {
 
 });
 
+/*
+Script: Function.BrawndoExtras.js
+	Extends the Function class (using .implement) with various methods.
+*/
+
+Function.implement({
+	cache: function(binding){
+		this.brawndo_cache = {}
+		return function(){
+			var key = $A(arguments).join('+')
+			this.brawndo_cache[key] = this.brawndo_cache[key] || this.apply((binding || this), arguments)
+			return this.brawndo_cache[key]
+		}.bind(this)
+	}
+})
+

@@ -44,3 +44,13 @@ ul {
   width:780px;
   margin:0 auto;
 }
+
+.header-data {
+  height:1.5em;
+  font-size:1.5em;
+  font-weight:bold;
+}
+.header-data .title {
+  color:#6B0404;
+  margin-right:10px;
+}
