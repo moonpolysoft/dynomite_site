@@ -9,14 +9,16 @@ p {
 }
 
 h1 {
+  margin:0;
   background:transparent url(dynomite.png) repeat scroll 0 0;
   height:115px;
   text-indent:-1000px;
 }
 
 h2 {
-  color:#6B0404;
+  color:#5E0202;
   margin-bottom:0.3em;
+  margin-top:0;
 }
 
 a {
@@ -42,7 +44,8 @@ ul {
 
 #main {
   width:780px;
-  margin:0 auto;
+  margin:20px auto 40px auto;
+  overflow:auto;
 }
 
 .header-data {
@@ -51,6 +54,6 @@ ul {
   font-weight:bold;
 }
 .header-data .title {
-  color:#6B0404;
+  color:#5E0202;
   margin-right:10px;
 }
