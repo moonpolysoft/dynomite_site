@@ -107,7 +107,9 @@ var GitHub = new Class({
 			return {
 				html        : this._gen_html(json_item),
 				source      : this._gen_source(json_item),
-				created_on  : Date.parse(json_item.created_at)
+				created_on  : Date.parse(json_item.created_at),
+				repository  : json_item.repository,
+				type        : json_item.type
 			}
 		}.bind(this))
 		
@@ -148,7 +150,13 @@ var GitHub = new Class({
 window.addEvent('domready', function(){
 	new GitHub()
 		.addEvent('dataReady', function(model){ 
-			$('github-data').set('html','<span class="title">Latest Commit</span>' + model.sort_by('created_on').first().created_on.timeDiffInWords()) 
+			var rows = model.db.filter(function(x){ return x.type === 'CommitEvent' && x.repository.name == "dynomite" })
+			if (rows && rows.length > 0)
+				$('github-data').adopt([
+					new Element('span', {'class':'github-data-group',html:'<span class="title">Latest Commit</span>' + rows.first().created_on.timeDiffInWords()}),
+					new Element('span', {'class':'github-data-group',html:'<span class="title">Forks</span>'         + rows.first().repository.forks}),
+					new Element('span', {'class':'github-data-group',html:'<span class="title">Watchers</span>'      + rows.first().repository.watchers})
+				])
 		})
 		.get_data()
 })

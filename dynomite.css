@@ -1,11 +1,14 @@
 body {
-  background-color:#AA0505;
+/*  background-color:#AA0505;*/
+  background:url('noiz.gif');
+  background-repeat: repeat;
   color:white;
   font-family:Helvetica Neue, Arial, Helvetica, sans-serif;  
 }
 
 p {
-  font-size:1.3em;
+  font-size:1.2em;
+  font-weight:lighter;
 }
 
 h1 {
@@ -19,6 +22,8 @@ h2 {
   color:#5E0202;
   margin-bottom:0.3em;
   margin-top:0;
+  text-shadow: rgba(255, 255, 255, 0.1) 1px 1px 1px;
+  font-family:Helvetica;
 }
 
 a {
@@ -34,7 +39,7 @@ a {
 ul {
   list-style:none;
   padding:0;
-  margin:0;
+  margin:0 0 0 0.2em;
 }
 
 .infobox { 
@@ -52,8 +57,18 @@ ul {
   height:1.5em;
   font-size:1.5em;
   font-weight:bold;
+  margin-bottom:-10px;
 }
 .header-data .title {
   color:#5E0202;
   margin-right:10px;
+  text-shadow: rgba(255, 255, 255, 0.1) 1px 1px 1px;
+}
+
+.github-data-group {
+  margin-right:20px;
+}
+
+.keyword {
+  
 }
