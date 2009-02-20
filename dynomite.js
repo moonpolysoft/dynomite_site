@@ -153,9 +153,9 @@ window.addEvent('domready', function(){
 			var rows = model.db.filter(function(x){ return x.type === 'CommitEvent' && x.repository.name == "dynomite" })
 			if (rows && rows.length > 0)
 				$('github-data').adopt([
-					new Element('span', {'class':'github-data-group',html:'<span class="title">Latest Commit</span>' + rows.first().created_on.timeDiffInWords()}),
-					new Element('span', {'class':'github-data-group',html:'<span class="title">Forks</span>'         + rows.first().repository.forks}),
-					new Element('span', {'class':'github-data-group',html:'<span class="title">Watchers</span>'      + rows.first().repository.watchers})
+					new Element('span', {'class':'github-data-group',html:'<a class="title" href="http://www.github.com/cliffmoon/dynomite">Latest Commit</a>' + rows.first().created_on.timeDiffInWords()}),
+					new Element('span', {'class':'github-data-group',html:'<a class="title" href="http://www.github.com/cliffmoon/dynomite">Forks</a>'         + rows.first().repository.forks}),
+					new Element('span', {'class':'github-data-group',html:'<a class="title" href="http://www.github.com/cliffmoon/dynomite">Watchers</a>'      + rows.first().repository.watchers})
 				])
 		})
 		.get_data()
